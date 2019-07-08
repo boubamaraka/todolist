@@ -1,0 +1,30 @@
+{% extends 'task/base.html'%}
+{% block title%}
+{% endblock%}
+{% block content%}
+    {% if all_task%}
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Creation Time</th>
+            <th>Completed Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for task in all_task %}
+            <tr>
+              <td>{{task.name}}</td>
+              <td>{{task.creation_date}}</td>
+              <td>{{task.completed_time}}</td>
+              <td></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+
+    {% else %}
+      <p>No task added yet</p>
+    {% endif %}
+{% endblock%}
